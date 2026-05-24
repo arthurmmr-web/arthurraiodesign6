@@ -1,0 +1,936 @@
+<!-- Designer Zine - Portfolio Home -->
+<!DOCTYPE html><html class="light" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>DESIGNER_ZINE | Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&amp;family=Public+Sans:wght@400;700&amp;family=Space+Grotesk:wght@700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        .halftone-bg {
+            background-image: radial-gradient(#1b1b1b 1px, transparent 0);
+            background-size: 12px 12px;
+            opacity: 0.1;
+        }
+        .sticker-rotate-1 { transform: rotate(-5deg); }
+        .sticker-rotate-2 { transform: rotate(8deg); }
+        .sticker-rotate-3 { transform: rotate(-12deg); }
+        
+        .vhs-window-shadow {
+            box-shadow: 8px 8px 0px 0px #1b1b1b;
+        }
+        
+        body {
+            background-color: #FDFCF0; /* Specific request override for cream background */
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary": "#006875",
+                        "surface-dim": "#dadada",
+                        "error": "#ba1a1a",
+                        "tertiary": "#626200",
+                        "secondary-fixed": "#9cf0ff",
+                        "on-surface-variant": "#5e3f38",
+                        "outline": "#926f66",
+                        "tertiary-fixed": "#eaea00",
+                        "on-secondary-container": "#00616d",
+                        "on-error": "#ffffff",
+                        "secondary-fixed-dim": "#00daf3",
+                        "on-background": "#1b1b1b",
+                        "on-primary-container": "#fffbff",
+                        "inverse-primary": "#ffb4a2",
+                        "on-secondary-fixed-variant": "#004f58",
+                        "on-tertiary": "#ffffff",
+                        "background": "#f9f9f9",
+                        "primary-container": "#dc3300",
+                        "on-secondary-fixed": "#001f24",
+                        "surface-container": "#eeeeee",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed": "#1d1d00",
+                        "inverse-surface": "#303030",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-on-surface": "#f1f1f1",
+                        "on-primary-fixed-variant": "#8a1d00",
+                        "surface-container-low": "#f3f3f3",
+                        "surface": "#f9f9f9",
+                        "on-tertiary-container": "#424200",
+                        "on-tertiary-fixed-variant": "#494900",
+                        "tertiary-container": "#b1b100",
+                        "tertiary-fixed-dim": "#cdcd00",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-primary-fixed": "#3c0700",
+                        "primary-fixed": "#ffdad2",
+                        "on-secondary": "#ffffff",
+                        "primary": "#b02700",
+                        "secondary-container": "#00e3fd",
+                        "surface-tint": "#b42800",
+                        "surface-variant": "#e2e2e2",
+                        "on-error-container": "#93000a",
+                        "surface-bright": "#f9f9f9",
+                        "outline-variant": "#e8bdb3",
+                        "on-surface": "#1b1b1b",
+                        "surface-container-high": "#e8e8e8",
+                        "on-primary": "#ffffff",
+                        "primary-fixed-dim": "#ffb4a2"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "64px",
+                        "unit": "8px",
+                        "margin-mobile": "24px",
+                        "gutter": "32px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Public Sans"],
+                        "body-md": ["Public Sans"],
+                        "headline-lg": ["Bricolage Grotesque"],
+                        "display-lg": ["Bricolage Grotesque"],
+                        "label-lg": ["Space Grotesk"],
+                        "headline-lg-mobile": ["Bricolage Grotesque"],
+                        "headline-md": ["Bricolage Grotesque"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "headline-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "display-lg": ["80px", {"lineHeight": "1.0", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                        "label-lg": ["14px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["36px", {"lineHeight": "1.1", "fontWeight": "800"}],
+                        "headline-md": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="min-h-screen text-on-background selection:bg-secondary-container">
+<!-- TopNavBar -->
+<header class="w-full top-0 sticky z-50 bg-background dark:bg-background border-b-3 border-on-background dark:border-surface-variant shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+<nav class="flex justify-between items-center px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md italic font-black text-primary dark:text-primary-fixed-dim cursor-pointer active:scale-95 transition-all duration-100">
+                DESIGNER_ZINE
+            </div>
+<div class="hidden md:flex items-center gap-6"><a class="font-label-lg text-label-lg uppercase tracking-wider text-primary underline decoration-3 underline-offset-4 hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all duration-100 cursor-pointer active:scale-95" href="{{DATA:SCREEN:SCREEN_6}}">Home</a>
+<a class="font-label-lg text-label-lg uppercase tracking-wider text-on-background dark:text-on-surface hover:text-secondary hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all duration-100 cursor-pointer active:scale-95" href="{{DATA:SCREEN:SCREEN_4}}">Work</a>
+
+<a class="font-label-lg text-label-lg uppercase tracking-wider text-on-background dark:text-on-surface hover:text-secondary hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all duration-100 cursor-pointer active:scale-95" href="{{DATA:SCREEN:SCREEN_2}}">Contact</a></div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary cursor-pointer active:scale-95 hover:scale-110 transition-transform" data-icon="mail">mail</span>
+<span class="material-symbols-outlined text-primary cursor-pointer active:scale-95 hover:scale-110 transition-transform" data-icon="open_in_new">open_in_new</span>
+</div>
+</nav>
+</header>
+<!-- SideNavBar (Toolkit) -->
+
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12 relative overflow-hidden">
+<!-- Hero Section -->
+<section class="grid lg:grid-cols-12 gap-gutter items-center mb-32 relative">
+<!-- Decorative Halftone Circle -->
+<div class="absolute -top-20 -left-20 w-64 h-64 halftone-bg rounded-full -z-10"></div>
+<div class="lg:col-span-7 z-10">
+<h1 class="font-display-lg text-display-lg uppercase mb-6 leading-none">
+                    Graphic <span class="text-primary italic">Designer</span><br>&amp; Art Director
+                </h1>
+<p class="font-headline-md text-headline-md text-on-surface-variant mb-10 border-l-8 border-primary pl-6">
+                    Identidade Visual - Projetos Gráficos&nbsp;</p><div class="">Redes Sociais - Impressão Gráfica</div><p class=""></p>
+<div class="flex flex-wrap gap-6 items-center">
+<a href="{{DATA:SCREEN:SCREEN_4}}" class="group relative inline-block px-10 py-5 bg-primary text-on-primary border-3 border-on-background shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all active:scale-95">
+<span class="font-label-lg text-label-lg uppercase tracking-widest">PROJETOS</span>
+</a>
+<!-- Decorative Sticker -->
+<a href="{{DATA:SCREEN:SCREEN_2}}" class="sticker-rotate-2 bg-tertiary-fixed text-on-tertiary-fixed px-6 py-2 border-3 border-on-background shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] font-label-lg animate-bounce inline-block cursor-pointer hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all">
+                        FALE COMIGO</a>
+</div>
+</div>
+<div class="lg:col-span-5 relative flex justify-center">
+<!-- Retro Toy Box / CRT Frame -->
+<div class="relative p-6 bg-white border-4 border-on-background shadow-[12px_12px_0px_0px_#1b1b1b] rounded-xl overflow-hidden group">
+<div class="absolute inset-0 halftone-bg pointer-events-none"></div>
+<div class="absolute top-4 left-4 bg-primary text-white px-3 py-1 text-[10px] font-bold uppercase border-2 border-on-background z-20">New!</div>
+<img alt="Designer Avatar" class="w-full h-auto rounded-lg border-3 border-on-background relative z-10 transition-transform group-hover:scale-105 duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8aDFNyNj9D3qJco4EuLe_NyikA461DT6PbNICTtFZmTH4uHbnkD0l1wZdNDU5BqGQGIqcl11C-wH3mgjW6zmCqRcx9a9bAL0L34tCWTnBKJ3Py-xcZQ4pGGQUszN-Y-wm9Rb515iBkEEa7IjyF3GmX2b3qXq0ZN4KT0EQEyhnAEDjBuVCFrOAWoQymyDF9Ngs3QTLKYQwING8sSdur-W6NKbOqCSL_MsrrfBr9tATNSSIOk7VxhdBcfqsfFGKMDvorlKciFALVIoGYg">
+<div class="mt-4 flex justify-between items-center relative z-10">
+<span class="font-label-lg text-on-background italic">ARTHUR RAIO</span>
+<div class="flex gap-1">
+<div class="w-3 h-3 rounded-full bg-error border-2 border-on-background"></div>
+<div class="w-3 h-3 rounded-full bg-secondary-container border-2 border-on-background"></div>
+</div>
+</div>
+</div>
+<!-- Floating Decorative Stars -->
+<span class="material-symbols-outlined absolute -top-8 -right-8 text-6xl text-tertiary-fixed animate-pulse" data-icon="star" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+<span class="material-symbols-outlined absolute bottom-10 -left-10 text-4xl text-secondary-container sticker-rotate-3" data-icon="auto_awesome" style="font-variation-settings: &quot;FILL&quot; 1;">auto_awesome</span>
+</div>
+</section>
+<!-- Bio / VHS Section -->
+<section class="mb-32 max-w-4xl mx-auto">
+<div class="vhs-window-shadow border-4 border-on-background bg-surface-container-lowest overflow-hidden">
+<!-- Window Header -->
+<div class="bg-on-background p-3 flex justify-between items-center">
+<div class="flex gap-2">
+<div class="w-4 h-4 rounded-full bg-error border-2 border-white"></div>
+<div class="w-4 h-4 rounded-full bg-tertiary-fixed border-2 border-white"></div>
+<div class="w-4 h-4 rounded-full bg-secondary-container border-2 border-white"></div>
+</div>
+<span class="text-white font-label-lg uppercase tracking-widest text-[12px]">SYSTEM_BIO.DAT</span>
+</div>
+<!-- Content -->
+<div class="p-10 grid md:grid-cols-3 gap-8">
+<div class="md:col-span-2">
+<h2 class="font-headline-md text-headline-md mb-4 text-primary uppercase">bio</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                            Designer Gráfico especializado em identidades visuais e criação de conteúdo digital. Apaixonado por tipografia, composição e por transformar ideias em soluções criativas. Focado em entregar projetos que equilibram estética, propósito e funcionalidade.
+                        </p>
+</div>
+<div class="flex flex-col gap-4">
+<div class="bg-secondary-container p-4 border-3 border-on-background sticker-rotate-1">
+<span class="font-label-lg text-[10px] uppercase block mb-1">Status</span>
+<span class="font-headline-md text-[20px] font-black italic">Online</span>
+</div>
+<div class="bg-primary-fixed p-4 border-3 border-on-background sticker-rotate-2">
+<span class="font-label-lg text-[10px] uppercase block mb-1">Location</span>
+<span class="font-headline-md text-[20px] font-black italic">Porto Alegre</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Project Gallery -->
+<section class="mb-32"><div class="flex items-center gap-6 mb-8">
+    <h2 class="font-display-lg text-display-lg uppercase leading-none">Selected <span class="text-secondary">Works</span></h2>
+    <div class="flex-grow h-1 bg-on-background"></div>
+    <div class="sticker-rotate-1 bg-white border-3 border-on-background px-4 py-2 font-label-lg">VOL. 24</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+    <!-- Image 1 -->
+    <div class="border-4 border-on-background bg-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] overflow-hidden">
+        <img src="https://lh3.googleusercontent.com/aida/ADBb0uinl84AiOiglJ9vNy4YknnzyCV0JI5DgnrX1PEja8KsM2IyXOK7nbCUB5qbfrvJIEq4jJaM9EKcrfwybHJISYKv0jXQzZFhZUtcoJGtGv1twbLhB9wh-j0Rb52QJ_r6bg38Ks1gpyLQLSES6niCL7q2gDrkYYi21ipXtSuphsIq44LuNiLsLxBljTmGVtvPPlUS3qddNWrU-vopTVMo9o3oulvdylEp84-TwtT6JXKl-WoWsyZ-BgUpDw" alt="Editorial Chronicles" class="w-full h-full object-cover aspect-square grayscale hover:grayscale-0 transition-all duration-500">
+    </div>
+    <!-- Image 2 -->
+    <div class="border-4 border-on-background bg-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] overflow-hidden">
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3nNivSeTt-R9eQJoy8lW4j39ofPtHXqeHN2ufvZTcCCxDuzGLA_oNP3kMH0l-RV0CGGzecbHb3PMTFQB9uh9ccgpry4Ol7lF4fuCD0V_NqsuMMo_9ZskKKwMFaHe1VshG-QkFHkuVX_J8xVnENqK9abRRoyKpyrK855xgHiUqERhZOBctiW_Su0acC_HtlN3ddGx4ZjIf0fF5UH41V2yBgrGYd7ZmypHQIZyuIzJxNhQRSOl1gtoY7URsmSfGqvxJMt2bXwT7ibg" alt="VHS Nightmare" class="w-full h-full object-cover aspect-[3/4]">
+    </div>
+    <!-- Image 3 -->
+    <div class="border-4 border-on-background bg-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] overflow-hidden md:row-span-2">
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3nNivSeTt-R9eQJoy8lW4j39ofPtHXqeHN2ufvZTcCCxDuzGLA_oNP3kMH0l-RV0CGGzecbHb3PMTFQB9uh9ccgpry4Ol7lF4fuCD0V_NqsuMMo_9ZskKKwMFaHe1VshG-QkFHkuVX_J8xVnENqK9abRRoyKpyrK855xgHiUqERhZOBctiW_Su0acC_HtlN3ddGx4ZjIf0fF5UH41V2yBgrGYd7ZmypHQIZyuIzJxNhQRSOl1gtoY7URsmSfGqvxJMt2bXwT7ibg" alt="Streetwear Vibe" class="w-full h-full object-cover">
+    </div>
+    <!-- Image 4 -->
+    <div class="border-4 border-on-background bg-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] overflow-hidden">
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3nNivSeTt-R9eQJoy8lW4j39ofPtHXqeHN2ufvZTcCCxDuzGLA_oNP3kMH0l-RV0CGGzecbHb3PMTFQB9uh9ccgpry4Ol7lF4fuCD0V_NqsuMMo_9ZskKKwMFaHe1VshG-QkFHkuVX_J8xVnENqK9abRRoyKpyrK855xgHiUqERhZOBctiW_Su0acC_HtlN3ddGx4ZjIf0fF5UH41V2yBgrGYd7ZmypHQIZyuIzJxNhQRSOl1gtoY7URsmSfGqvxJMt2bXwT7ibg" alt="Sonic Waves" class="w-full h-full object-cover aspect-square">
+    </div>
+    <!-- Image 5 (Repeat for wall effect) -->
+    <div class="border-4 border-on-background bg-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] overflow-hidden">
+        <img src="https://lh3.googleusercontent.com/aida/ADBb0uinl84AiOiglJ9vNy4YknnzyCV0JI5DgnrX1PEja8KsM2IyXOK7nbCUB5qbfrvJIEq4jJaM9EKcrfwybHJISYKv0jXQzZFhZUtcoJGtGv1twbLhB9wh-j0Rb52QJ_r6bg38Ks1gpyLQLSES6niCL7q2gDrkYYi21ipXtSuphsIq44LuNiLsLxBljTmGVtvPPlUS3qddNWrU-vopTVMo9o3oulvdylEp84-TwtT6JXKl-WoWsyZ-BgUpDw" alt="Editorial Chronicles" class="w-full h-full object-cover aspect-square">
+    </div>
+</div></section>
+<!-- Newsletter / CTA Sticker Section -->
+<section class="mb-32 flex flex-col items-center">
+<div class="relative p-12 bg-white border-4 border-on-background shadow-[10px_10px_0px_0px_#1b1b1b] max-w-2xl w-full text-center group">
+<div class="absolute -top-6 -left-6 bg-error text-white px-4 py-2 border-3 border-on-background sticker-rotate-3 font-label-lg group-hover:rotate-0 transition-transform">SUBSCRIBE</div>
+<h2 class="font-display-lg text-headline-lg uppercase mb-4">Stay Tuned!</h2>
+<p class="font-body-lg mb-8">Get fresh inspiration and project updates delivered with a side of grit.</p>
+<div class="flex gap-4 max-w-md mx-auto">
+<input class="flex-grow border-3 border-on-background p-4 font-label-lg focus:outline-none focus:border-primary transition-colors bg-surface-container-low" placeholder="YOUR_EMAIL@HERE" type="email">
+<button class="bg-on-background text-white px-8 py-4 font-label-lg hover:bg-primary transition-colors active:scale-95">GO!</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-on-background dark:bg-surface-container-highest border-t-3 border-on-background shadow-flat">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-desktop py-8 gap-gutter max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md text-primary hover:italic transition-all duration-200 cursor-pointer">
+                DESIGNER_ZINE
+            </div>
+<div class="font-body-md text-body-md text-surface-dim flex flex-wrap justify-center gap-8">
+<a class="hover:text-secondary-fixed-dim hover:italic transition-all duration-200" href="#">Dribbble</a>
+<a class="hover:text-secondary-fixed-dim hover:italic transition-all duration-200" href="#">Instagram</a>
+<a class="hover:text-secondary-fixed-dim hover:italic transition-all duration-200" href="#">LinkedIn</a>
+</div>
+<div class="font-body-md text-body-md text-surface-dim uppercase tracking-tighter text-center">
+                © 2024 RETRO-FUTURE PORTFOLIO. ALL RIGHTS RESERVED.
+            </div>
+</div>
+</footer>
+<!-- Interactive Scripts -->
+<script>
+        // Micro-interactions for floating elements
+        document.querySelectorAll('.sticker-rotate-1, .sticker-rotate-2, .sticker-rotate-3').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                el.style.transform = 'scale(1.1) rotate(0deg)';
+                el.style.transition = 'all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+            });
+            el.addEventListener('mouseleave', () => {
+                // Re-apply original class rotation
+                if (el.classList.contains('sticker-rotate-1')) el.style.transform = 'rotate(-5deg)';
+                if (el.classList.contains('sticker-rotate-2')) el.style.transform = 'rotate(8deg)';
+                if (el.classList.contains('sticker-rotate-3')) el.style.transform = 'rotate(-12deg)';
+            });
+        });
+
+        // Simple parallex for halftone background
+        window.addEventListener('scroll', () => {
+            const halftone = document.querySelector('.halftone-bg');
+            if (halftone) {
+                const scrolled = window.pageYOffset;
+                halftone.style.backgroundPositionY = -(scrolled * 0.1) + 'px';
+            }
+        });
+    </script>
+
+
+</body></html>
+
+<!-- Designer Zine - Work Portfolio (Updated) -->
+<!DOCTYPE html><html lang="pt-br" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>STUDIO_ZINE | SELECTED WORK</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&amp;family=Public+Sans:wght@400;700&amp;family=Space+Grotesk:wght@500;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed": "#ffdad2",
+                    "on-secondary-fixed-variant": "#004f58",
+                    "on-secondary": "#ffffff",
+                    "tertiary": "#626200",
+                    "inverse-primary": "#ffb4a2",
+                    "tertiary-container": "#b1b100",
+                    "on-tertiary": "#ffffff",
+                    "background": "#f9f9f9",
+                    "surface-container-lowest": "#ffffff",
+                    "on-error": "#ffffff",
+                    "outline": "#926f66",
+                    "surface-container-highest": "#e2e2e2",
+                    "surface-container": "#eeeeee",
+                    "outline-variant": "#e8bdb3",
+                    "surface-dim": "#dadada",
+                    "primary-container": "#dc3300",
+                    "tertiary-fixed": "#eaea00",
+                    "on-tertiary-container": "#424200",
+                    "inverse-on-surface": "#f1f1f1",
+                    "tertiary-fixed-dim": "#cdcd00",
+                    "on-tertiary-fixed-variant": "#494900",
+                    "on-primary-container": "#fffbff",
+                    "error-container": "#ffdad6",
+                    "error": "#ba1a1a",
+                    "secondary-container": "#00e3fd",
+                    "primary": "#b02700",
+                    "on-secondary-container": "#00616d",
+                    "surface-tint": "#b42800",
+                    "primary-fixed-dim": "#ffb4a2",
+                    "on-error-container": "#93000a",
+                    "secondary-fixed-dim": "#00daf3",
+                    "on-surface": "#1b1b1b",
+                    "secondary-fixed": "#9cf0ff",
+                    "surface-variant": "#e2e2e2",
+                    "surface-container-high": "#e8e8e8",
+                    "on-primary-fixed-variant": "#8a1d00",
+                    "surface-bright": "#f9f9f9",
+                    "on-primary": "#ffffff",
+                    "surface-container-low": "#f3f3f3",
+                    "on-background": "#1b1b1b",
+                    "on-secondary-fixed": "#001f24",
+                    "on-tertiary-fixed": "#1d1d00",
+                    "inverse-surface": "#303030",
+                    "secondary": "#006875",
+                    "surface": "#f9f9f9",
+                    "on-primary-fixed": "#3c0700",
+                    "on-surface-variant": "#5e3f38"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "24px",
+                    "margin-desktop": "64px",
+                    "container-max": "1280px",
+                    "unit": "8px",
+                    "gutter": "32px"
+            },
+            "fontFamily": {
+                    "label-lg": ["Space Grotesk"],
+                    "headline-lg-mobile": ["Bricolage Grotesque"],
+                    "body-lg": ["Public Sans"],
+                    "headline-md": ["Bricolage Grotesque"],
+                    "body-md": ["Public Sans"],
+                    "display-lg": ["Bricolage Grotesque"],
+                    "headline-lg": ["Bricolage Grotesque"]
+            },
+            "fontSize": {
+                    "label-lg": ["14px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["36px", {"lineHeight": "1.1", "fontWeight": "800"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-md": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "display-lg": ["80px", {"lineHeight": "1.0", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                    "headline-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+        }
+        
+        .neo-shadow {
+            box-shadow: 6px 6px 0px 0px rgba(0,0,0,1);
+        }
+        
+        .neo-shadow-sm {
+            box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
+        }
+
+        .neo-border {
+            border: 4px solid #1b1b1b;
+        }
+
+        .halftone-bg {
+            background-image: radial-gradient(#1b1b1b 1px, transparent 0);
+            background-size: 8px 8px;
+            opacity: 0.1;
+        }
+
+        .sticker-float {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(-3deg); }
+            50% { transform: translateY(-10px) rotate(3deg); }
+        }
+
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="w-full top-0 sticky z-50 bg-background border-b-4 border-on-background shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+<nav class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<a href="{{DATA:SCREEN:SCREEN_6}}" class="font-display-lg text-headline-md font-black text-on-background uppercase tracking-tighter cursor-pointer">STUDIO_ZINE</a>
+<div class="hidden md:flex gap-gutter items-center">
+<a class="font-label-lg text-label-lg text-primary-container font-bold underline decoration-4 hover:translate-x-[2px] hover:translate-y-[2px] transition-all" href="{{DATA:SCREEN:SCREEN_4}}">Work</a>
+<a class="font-label-lg text-label-lg text-on-background font-medium hover:translate-x-[2px] hover:translate-y-[2px] transition-all" href="#">Bio</a>
+<a class="font-label-lg text-label-lg text-on-background font-medium hover:translate-x-[2px] hover:translate-y-[2px] transition-all" href="{{DATA:SCREEN:SCREEN_2}}">Contact</a>
+</div>
+<!-- Mobile Burger (Visual only) -->
+<button class="md:hidden text-on-background">
+<span class="material-symbols-outlined text-[32px]">menu</span>
+</button>
+</nav>
+</header>
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12 relative">
+<!-- Hero Section -->
+<section class="mb-20 relative">
+<div class="absolute -top-10 -right-5 md:right-10 sticker-float pointer-events-none">
+<div class="neo-border bg-tertiary-fixed text-on-tertiary-fixed font-label-lg px-4 py-2 rotate-12 neo-shadow-sm">
+                    NEW WORK!
+                </div>
+</div>
+<h1 class="font-headline-lg text-headline-lg md:text-display-lg uppercase text-on-background tracking-tighter relative z-10" style="transform: rotateY(-11.66deg) rotateX(-25.98deg);"><br>
+<span class="text-primary drop-shadow-[4px_4px_0px_rgba(0,0,0,1)]">TRABALHOS</span>
+</h1>
+<div class="w-32 h-4 bg-secondary-container neo-border mt-4"></div>
+</section>
+<!-- Category: Redes Sociais -->
+<section class="mb-24 relative">
+<div class="flex items-end gap-4 mb-8">
+<h2 class="font-headline-lg text-headline-md md:text-headline-lg neo-border bg-primary-container text-on-primary-container px-8 py-4 neo-shadow uppercase tracking-tight">
+                    Redes Sociais
+                </h2>
+<div class="hidden md:block mb-4">
+<span class="material-symbols-outlined text-primary text-5xl">trending_up</span>
+</div>
+</div>
+<div class="relative group">
+<div class="flex gap-gutter overflow-x-auto pb-10 hide-scrollbar snap-x snap-mandatory">
+<!-- Carousel Items -->
+<div class="flex-none w-72 md:w-96 snap-start">
+<div class="neo-border bg-white neo-shadow overflow-hidden group/card hover:-translate-y-2 transition-transform duration-300">
+<img alt="" class="w-full aspect-square object-cover border-b-4 border-on-background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaY3lye6zM_bgfqhjlgObzblQoSRbq-aHDKFJsP24lpTW0n3jAfwOcRWwQc0g6nC8LmcIYo66BtKldb5HkSOAOTnarRrWN3hbnpTu6GGzplJJOH6IkdOhvqsk6RMk9DmuomyDi2_S4O8Ne5_ZlNwE54DWXYydStZzia1ALBjrncvAGw5KTvPtcwHaDacYkwTp2hes-UiJzqFTZW5C7kMkcENav-lP9MVOMsn1VLqTkkVZmJqr2FjQ3dxhUXFztlZoJ16fsOq7PEzs">
+<div class="p-4 font-label-lg uppercase">ZAP CAMPAIGN 01</div>
+</div>
+</div>
+<div class="flex-none w-72 md:w-96 snap-start">
+<div class="neo-border bg-white neo-shadow overflow-hidden hover:-translate-y-2 transition-transform duration-300">
+<img alt="" class="w-full aspect-square object-cover border-b-4 border-on-background" src="https://lh3.googleusercontent.com/aida/ADBb0ugbxqEkQsqEUQb7rGovmcq5HKchKjLQU_qUfO9nZI-4bfOv6JW9cCmgWztIb9cypfKEWlTqTOofPwkUBxrOjNEpmdOjPTFEJlymq3UBiZGWKldCXO8XfiGzCklCaOglQxhdLvSX7l_Kx8nokE2Q7-vFfgj_-sRrATNNLZgvqMJmv4BFlC1_Ent6TpI1AQrbJ0lsq_2bUTkBXTLvYmUBgyfpje1xvVpBEut8CpIiK0PlIgZXK0dEaobp94s">
+<div class="p-4 font-label-lg uppercase">TIKTOK RAD REEL</div>
+</div>
+</div>
+<div class="flex-none w-72 md:w-96 snap-start">
+<div class="neo-border bg-white neo-shadow overflow-hidden hover:-translate-y-2 transition-transform duration-300">
+<img alt="" class="w-full aspect-square object-cover border-b-4 border-on-background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArz35Pca00KZXD7E6O2CBx2spArcKByiY724X_-Pz3kugbSmB0ynMNX1oxPhayec-DGdidndKKv18sXQNt_CaUsrd_Vg1i5bNOqEnk4Tevzd0M9FwpZPfpxJks6mEN4EikMTpmlNwNMeiV5ZGW8afxVm0pMrJkQNZpvClUrf4iHHa9Ax_28ImJNDeBxQwqtyjPzJOYtSW0mCuH0g4qu_1hYl-9NvO93IjEC6e7H_qp4QB2d9Xc1ZEbvh6K9un2mHJoD-bNkBRhbpQ">
+<div class="p-4 font-label-lg uppercase">INSTA GRID BLITZ</div>
+</div>
+</div>
+<div class="flex-none w-72 md:w-96 snap-start relative">
+<!-- Decorative Star -->
+<div class="absolute -top-6 -right-6 z-10 sticker-float">
+<span class="material-symbols-outlined text-tertiary-fixed text-6xl drop-shadow-[3px_3px_0px_rgba(0,0,0,1)]" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+</div>
+<div class="neo-border bg-white neo-shadow overflow-hidden hover:-translate-y-2 transition-transform duration-300">
+<img alt="" class="w-full aspect-square object-cover border-b-4 border-on-background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjVV_som2-mDL04dDKMk2dzZAWXerEuRzLfHZ-E-Z7SfvN8ce4yeiq9ktr9WYX7Xg4vxyXFPhKHgVyY4878pFdFbEGI7e9YHCs0uZojF1Uwu4mMS9we5T0evJ6eO9vJCcMYzzr8itASb6Uqxb02G04SzvNTuxFnKsUTfJLCIqOaOvawfXD-7OHHuw_-ro2brghltB5CcLIiQ6AJPnfJr_HUBaChu30iAr2QQfaJa5MnSmt5UOzB3JIHRsleo-xCTa_kQ516ayOXRo">
+<div class="p-4 font-label-lg uppercase">STORY BLAST</div>
+</div>
+</div>
+<div class="flex-none w-72 md:w-96 snap-start">
+<div class="neo-border bg-white neo-shadow overflow-hidden hover:-translate-y-2 transition-transform duration-300">
+<img alt="" class="w-full aspect-square object-cover border-b-4 border-on-background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjVV_som2-mDL04dDKMk2dzZAWXerEuRzLfHZ-E-Z7SfvN8ce4yeiq9ktr9WYX7Xg4vxyXFPhKHgVyY4878pFdFbEGI7e9YHCs0uZojF1Uwu4mMS9we5T0evJ6eO9vJCcMYzzr8itASb6Uqxb02G04SzvNTuxFnKsUTfJLCIqOaOvawfXD-7OHHuw_-ro2brghltB5CcLIiQ6AJPnfJr_HUBaChu30iAr2QQfaJa5MnSmt5UOzB3JIHRsleo-xCTa_kQ516ayOXRo">
+<div class="p-4 font-label-lg uppercase">SOCIAL IDENTITY</div>
+</div>
+</div>
+</div>
+<!-- Nav Arrows -->
+<div class="absolute top-1/2 -left-6 -translate-y-1/2 pointer-events-none md:pointer-events-auto">
+<button class="bg-surface-bright neo-border neo-shadow-sm p-2 hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all">
+<span class="material-symbols-outlined block">arrow_back</span>
+</button>
+</div>
+<div class="absolute top-1/2 -right-6 -translate-y-1/2 pointer-events-none md:pointer-events-auto">
+<button class="bg-surface-bright neo-border neo-shadow-sm p-2 hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all">
+<span class="material-symbols-outlined block">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Category: TV -->
+<section class="mb-24 relative">
+<div class="flex items-end justify-end gap-4 mb-8">
+<div class="hidden md:block mb-4">
+<span class="material-symbols-outlined text-secondary text-5xl">live_tv</span>
+</div>
+<h2 class="font-headline-lg text-headline-md md:text-headline-lg neo-border bg-secondary-container text-on-secondary-container px-8 py-4 neo-shadow uppercase tracking-tight">
+                    TV &amp; Motion
+                </h2>
+</div>
+<div class="relative">
+<!-- "ZAP!" Bubble Sticker -->
+<div class="absolute -top-12 left-10 z-20 rotate-[-15deg] sticker-float">
+<div class="bg-primary neo-border text-white font-display-lg text-headline-md px-6 py-2 neo-shadow">ZAP!</div>
+</div>
+<div class="flex gap-gutter overflow-x-auto pb-10 hide-scrollbar snap-x snap-mandatory">
+<div class="flex-none w-80 md:w-[450px] snap-start">
+<div class="neo-border bg-on-background text-white neo-shadow overflow-hidden">
+<div class="relative">
+<img alt="" class="w-full aspect-video object-cover opacity-90" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzzqLsE8ZfEUKu5jbrjRFa_VHsuAWEp83C7QyBd8NMrB3JiHQSbh7ZD28oONAsKZxUSt3FJK6Ou3tHKordpWn3NAiuUbJFssPsxa8jnk45V826oekrlzYLWlQMs-8Gz6n2jaMMRuxxzel2eCy5u1YankLAkhoa8JzP8MP75dPqXuxAyx6VWayVs1vnsedn3LFg3u6bmqgbhW9MdFe1CUfbkbHPBsmFnfpHwaf0IRGpo0yEZVz-l8qqJghMnwlEfdZkdZGAA9tLY_A">
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-6xl text-primary">play_circle</span>
+</div>
+</div>
+<div class="p-4 font-label-lg uppercase">OPENING SEQUENCE</div>
+</div>
+</div>
+<div class="flex-none w-80 md:w-[450px] snap-start">
+<div class="neo-border bg-on-background text-white neo-shadow overflow-hidden">
+<img alt="" class="w-full aspect-video object-cover" src="https://lh3.googleusercontent.com/aida/ADBb0ui_WT5yfGhkNxkQhxfcXl4fugE2gaHko0CYckWnUBikFIKjLt4VATfmPM7fDr6ufBT_vIMl-ba1COoOLKXsxx2VsXsybjGoTSyIG4bgGNuZ8Q7_yfpZnEZWLAuHxG3yGEEfnpJmn5LOhaM7yvgQ60vxCeQn0ZDkz2aju92LJx9n5EWZeOT3QacyW3N8HNdtpa_P1ux0kAZY6GLYPeZb2sLxCONudkoUiba0MSCxwcI6FijiygalhMc2zuY">
+<div class="p-4 font-label-lg uppercase">BUMPER PACK</div>
+</div>
+</div>
+<div class="flex-none w-80 md:w-[450px] snap-start">
+<div class="neo-border bg-on-background text-white neo-shadow overflow-hidden">
+<img alt="" class="w-full aspect-video object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5GJEhWtcfpFI64F1bwB55jGHF19v5Nl7UHyCOeb-rzRLqGM-X94L7yNrhC8JCy-GGsxPChgQhkP7uPLnzmAOFBnMZ1I4Q2APIFzTJHqV_tCsoXEDrgdCU3Ljr1_eUJT-aq7cj_PYsk8auCQu5AiQOMyu2lxphDvEaBLsu7hSBt78PTj-N288XNNoQ1eZsuxKwOzax6wUk3Fk4OMidJXqNXhvikaNLOz9E3-ps-B6bADHNwcX0RTsZXb-UkiMAHFCJCX7QdjH_RmU">
+<div class="p-4 font-label-lg uppercase">COMMERCIAL BREAK</div>
+</div>
+</div>
+<div class="flex-none w-80 md:w-[450px] snap-start">
+<div class="neo-border bg-on-background text-white neo-shadow overflow-hidden">
+<img alt="" class="w-full aspect-video object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuClf83O8K0f0NOSy4lsUffSckSjigSs0Gz2zOMjpAGYb7UtkPVPtwL4oXtgAGqami1p1a05DwVmKxqN04dhmhq3XwAsr2Rk0LFNT0yQ7nJFvypCpClwHY06hlrY1TC4-4aipyjD1eDvoPK1oH0Pk22dvNrqyZMcKRnRRMsk7qWTyBi-OGC2jCZ8vQIvmJCq9itzlihklQVrBcInNuG8LoFz0ZVbMuVAQKarmZ4pYmZHYFoZTzAYjs2xNli9Z7C8sLJzIeq7o-WNR5c">
+<div class="p-4 font-label-lg uppercase">NETWORK ID</div>
+</div>
+</div>
+<div class="flex-none w-80 md:w-[450px] snap-start">
+<div class="neo-border bg-on-background text-white neo-shadow overflow-hidden">
+<img alt="" class="w-full aspect-video object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuClf83O8K0f0NOSy4lsUffSckSjigSs0Gz2zOMjpAGYb7UtkPVPtwL4oXtgAGqami1p1a05DwVmKxqN04dhmhq3XwAsr2Rk0LFNT0yQ7nJFvypCpClwHY06hlrY1TC4-4aipyjD1eDvoPK1oH0Pk22dvNrqyZMcKRnRRMsk7qWTyBi-OGC2jCZ8vQIvmJCq9itzlihklQVrBcInNuG8LoFz0ZVbMuVAQKarmZ4pYmZHYFoZTzAYjs2xNli9Z7C8sLJzIeq7o-WNR5c">
+<div class="p-4 font-label-lg uppercase">PROMO SPOT 04</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Category: Identidade Visual -->
+<section class="mb-24 relative">
+<div class="flex items-end gap-4 mb-8">
+<h2 class="font-headline-lg text-headline-md md:text-headline-lg neo-border bg-tertiary-container text-on-tertiary px-8 py-4 neo-shadow uppercase tracking-tight">
+                    Identidade Visual
+                </h2>
+<div class="hidden md:block mb-4">
+<span class="material-symbols-outlined text-tertiary-container text-5xl">architecture</span>
+</div>
+</div>
+<div class="relative bg-white/50 neo-border p-8 overflow-hidden">
+<div class="halftone-bg absolute inset-0 pointer-events-none"></div>
+<div class="flex gap-gutter overflow-x-auto pb-4 hide-scrollbar snap-x snap-mandatory relative z-10">
+<!-- Square Cards for Identity -->
+<div class="flex-none w-64 md:w-80 snap-start">
+<div class="neo-border bg-white neo-shadow-sm overflow-hidden hover:rotate-2 transition-transform">
+<img alt="" class="w-full aspect-square object-cover border-b-2 border-on-background" src="https://lh3.googleusercontent.com/aida/ADBb0uhRP4-raxwM4Nzrbj_Obiy92P8Jw-JF4E1R75jthHXkyqqpgefIKRtI2oHXkRg5d5es98xqIJznfCEP2kxjQRV1s0jkT3zQKbYgaIKPazaPcxSMNNiGoPAp4O8zDIhGYPuCiXQtWYcRwQiq16P8L5sdKLAqQFwVEp1qvupbToUGmVX210LOKoeMyf4VmUJKI6iywi07caZth6lIZ2r7em87372cuTBX0UU0GlEnzE9W6hVjqqTkGoWnLa8">
+<div class="p-4 bg-tertiary-fixed text-on-tertiary-fixed font-label-lg">BRAND LOGO V1</div>
+</div>
+</div>
+<div class="flex-none w-64 md:w-80 snap-start">
+<div class="neo-border bg-white neo-shadow-sm overflow-hidden hover:-rotate-2 transition-transform">
+<img alt="" class="w-full aspect-square object-cover border-b-2 border-on-background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-HnWvd0RAScR8ejqhrWOvDqIzenLedWA633XGcbRItZ24AYdS4Q7mm1UL7cxeO7727byaG2AcTtdyIartv-8J-kOaf_FcvEbV6D9OvKo6-rOjOr2BBMFGn1LYuk6AyFdYCz22Gk4K5zCc9THrjPKAzKcSPX21884bzgx-bSUWWpC9FJiPmgWb2uLvPe9hE-VyNTkdKXNFpve0Bzz-Bh4gpQs3jxIVb20Ww4GhxXblGeXjq7RiXYIG1btSyyLvq4vmLhydnEfg97M">
+<div class="p-4 bg-secondary-fixed text-on-secondary-fixed font-label-lg">COLOR GUIDE</div>
+</div>
+</div>
+<div class="flex-none w-64 md:w-80 snap-start">
+<div class="neo-border bg-white neo-shadow-sm overflow-hidden hover:rotate-2 transition-transform">
+<img alt="" class="w-full aspect-square object-cover border-b-2 border-on-background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAw8dATAcv-LYQNAO9Ri8TgvF7Az3puXPKBlWKu0HHyt5ach2pprzm-dwEVhv81PPC9uSRfydXSyjsnFVsD28ANiBsMlmISnCU8_QbPBBfEWMyifoBMUNNyRDkfCDa6Qp1OCKktlJSJZNB_hckrQUyG3Lw613B0GqerBrFQcX3VL_CCUcyiqYv-HX9NozuPsLUPzmypUKvkYcmtwLgYzC7IsqudMR5U_XrgpKzuZVPhgo-wHv9bFrAjK_zjEZNPYMNl1hwGcn1vGGs">
+<div class="p-4 bg-primary-fixed text-on-primary-fixed font-label-lg">TYPE SYSTEM</div>
+</div>
+</div>
+<div class="flex-none w-64 md:w-80 snap-start">
+<div class="neo-border bg-white neo-shadow-sm overflow-hidden hover:-rotate-2 transition-transform">
+<img alt="" class="w-full aspect-square object-cover border-b-2 border-on-background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3fx2q_0axOiGCiVLj1wbstYhf-7nU5EieB__3ViUPANyMP6Pt8-vl0VTQ97GGV8g6wzthC7F8OWmBKPGWPEHdAYKSTAB6jnFHT46XkSCxJxjTb5Ea_VGVsCpShWHaRz7k8clpk_fhFihRGhkgvEvOB0qS-RzQ34d33191giTIml_WhpeCNZ8mdROZkv_XfPS5DpxGuHipcxWtIYfUdtMKO_F6JkkNDpHmV4x6Sr2bCTHIIJ8oHeesOxIUi7zxDDNzgYIIUHkOv1o">
+<div class="p-4 bg-tertiary-fixed-dim text-on-tertiary-fixed-variant font-label-lg">PACKAGING</div>
+</div>
+</div>
+<div class="flex-none w-64 md:w-80 snap-start">
+<div class="neo-border bg-white neo-shadow-sm overflow-hidden hover:rotate-2 transition-transform">
+<img alt="" class="w-full aspect-square object-cover border-b-2 border-on-background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3fx2q_0axOiGCiVLj1wbstYhf-7nU5EieB__3ViUPANyMP6Pt8-vl0VTQ97GGV8g6wzthC7F8OWmBKPGWPEHdAYKSTAB6jnFHT46XkSCxJxjTb5Ea_VGVsCpShWHaRz7k8clpk_fhFihRGhkgvEvOB0qS-RzQ34d33191giTIml_WhpeCNZ8mdROZkv_XfPS5DpxGuHipcxWtIYfUdtMKO_F6JkkNDpHmV4x6Sr2bCTHIIJ8oHeesOxIUi7zxDDNzgYIIUHkOv1o">
+<div class="p-4 bg-surface-container-high font-label-lg">ASSETS KIT</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Floating Decoration -->
+<div class="absolute -bottom-10 -right-5 sticker-float hidden md:block">
+<span class="material-symbols-outlined text-primary text-8xl opacity-20">brush</span>
+</div>
+</section>
+<!-- CTA / Contact Sticky -->
+<div class="flex justify-center mt-12">
+<a href="{{DATA:SCREEN:SCREEN_2}}" class="neo-border bg-on-background text-white px-10 py-6 neo-shadow flex items-center gap-6 cursor-pointer hover:bg-primary transition-colors group">
+<span class="font-headline-md uppercase tracking-tighter">BORA TRABALHAR?</span>
+<span class="material-symbols-outlined text-4xl group-hover:translate-x-4 transition-transform">arrow_forward</span>
+</a>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-auto bg-surface-container border-t-4 border-on-background">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop py-gutter gap-4 w-full max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md text-on-surface uppercase tracking-tighter font-black">
+                STUDIO_ZINE
+            </div>
+<div class="flex gap-gutter font-body-md text-body-md">
+<a class="text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="#">Dribbble</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="#">Read.cv</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="#">Email</a>
+</div>
+<div class="font-body-md text-body-md text-secondary text-center md:text-right uppercase">
+                ©1994 RADICAL PORTFOLIO. ALL RIGHTS RESERVED.
+            </div>
+</div>
+</footer>
+<script>
+        // Optional micro-interaction: subtle perspective follow on hero header
+        const hero = document.querySelector('h1');
+        document.addEventListener('mousemove', (e) => {
+            if (window.innerWidth > 768) {
+                const x = (window.innerWidth / 2 - e.pageX) / 50;
+                const y = (window.innerHeight / 2 - e.pageY) / 50;
+                hero.style.transform = `rotateY(${x}deg) rotateX(${-y}deg)`;
+            }
+        });
+    </script>
+
+
+</body></html>
+
+<!-- Designer Zine - Contact Me -->
+<!DOCTYPE html><html class="light" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&amp;family=Public+Sans:wght@400;700&amp;family=Space+Grotesk:wght@700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 700, 'GRAD' 0, 'opsz' 48;
+        }
+        .neo-brutal-shadow {
+            box-shadow: 8px 8px 0px 0px rgba(0,0,0,1);
+        }
+        .neo-brutal-shadow-sm {
+            box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
+        }
+        .halftone-bg {
+            background-image: radial-gradient(rgba(0,0,0,0.1) 1px, transparent 1px);
+            background-size: 8px 8px;
+        }
+        .sticker-rotate-neg { transform: rotate(-3deg); }
+        .sticker-rotate-pos { transform: rotate(5deg); }
+        
+        .btn-interact:hover {
+            transform: translate(2px, 2px);
+            box-shadow: 0px 0px 0px 0px rgba(0,0,0,1);
+        }
+        .btn-interact:active {
+            transform: scale(0.95);
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed": "#001f24",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#494900",
+                    "primary-fixed-dim": "#ffb4a2",
+                    "background": "#f9f9f9",
+                    "surface-variant": "#e2e2e2",
+                    "on-error-container": "#93000a",
+                    "on-secondary-container": "#00616d",
+                    "secondary-container": "#00e3fd",
+                    "outline-variant": "#e8bdb3",
+                    "secondary-fixed": "#9cf0ff",
+                    "primary": "#b02700",
+                    "surface-container-low": "#f3f3f3",
+                    "on-tertiary-container": "#424200",
+                    "surface": "#f9f9f9",
+                    "primary-fixed": "#ffdad2",
+                    "on-surface-variant": "#5e3f38",
+                    "tertiary-container": "#b1b100",
+                    "on-error": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "surface-container-high": "#e8e8e8",
+                    "surface-container-highest": "#e2e2e2",
+                    "outline": "#926f66",
+                    "tertiary": "#626200",
+                    "surface-tint": "#b42800",
+                    "on-secondary-fixed-variant": "#004f58",
+                    "inverse-on-surface": "#f1f1f1",
+                    "on-primary-fixed": "#3c0700",
+                    "on-tertiary": "#ffffff",
+                    "surface-dim": "#dadada",
+                    "on-primary-container": "#fffbff",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container": "#eeeeee",
+                    "tertiary-fixed": "#eaea00",
+                    "on-primary": "#ffffff",
+                    "inverse-primary": "#ffb4a2",
+                    "secondary-fixed-dim": "#00daf3",
+                    "inverse-surface": "#303030",
+                    "primary-container": "#dc3300",
+                    "on-tertiary-fixed": "#1d1d00",
+                    "error": "#ba1a1a",
+                    "surface-bright": "#f9f9f9",
+                    "on-background": "#1b1b1b",
+                    "on-surface": "#1b1b1b",
+                    "tertiary-fixed-dim": "#cdcd00",
+                    "secondary": "#006875",
+                    "on-primary-fixed-variant": "#8a1d00"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "32px",
+                    "margin-desktop": "64px",
+                    "margin-mobile": "24px",
+                    "unit": "8px",
+                    "container-max": "1280px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Bricolage Grotesque"],
+                    "body-md": ["Public Sans"],
+                    "body-lg": ["Public Sans"],
+                    "label-lg": ["Space Grotesk"],
+                    "headline-lg-mobile": ["Bricolage Grotesque"],
+                    "display-lg": ["Bricolage Grotesque"],
+                    "headline-lg": ["Bricolage Grotesque"]
+            },
+            "fontSize": {
+                    "headline-md": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-lg": ["14px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["36px", {"lineHeight": "1.1", "fontWeight": "800"}],
+                    "display-lg": ["80px", {"lineHeight": "1.0", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                    "headline-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+            }
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="w-full top-0 sticky bg-background dark:bg-background border-b-4 border-on-background shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] z-50">
+<div class="flex justify-between items-center px-margin-desktop py-4 max-w-container-max mx-auto">
+<a href="{{DATA:SCREEN:SCREEN_6}}" class="font-display-lg text-headline-md font-black text-on-background uppercase tracking-tighter cursor-pointer">STUDIO_ZINE</a>
+<div class="hidden md:flex items-center gap-8 font-label-lg text-label-lg">
+<a class="text-on-background font-medium hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all" href="{{DATA:SCREEN:SCREEN_4}}">Work</a>
+<a class="text-on-background font-medium hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all" href="{{DATA:SCREEN:SCREEN_6}}">Bio</a>
+<a class="text-primary-container font-bold underline decoration-4 hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all" href="{{DATA:SCREEN:SCREEN_2}}">Contact</a>
+
+</div>
+<div class="md:hidden">
+<span class="material-symbols-outlined">menu</span>
+</div>
+</div>
+</nav>
+<main class="flex-grow max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12 w-full relative">
+<!-- Decorative Stickers -->
+<div class="absolute top-10 right-10 sticker-rotate-pos hidden md:block z-0">
+<div class="bg-tertiary-container text-on-tertiary-container border-4 border-on-background px-4 py-2 font-label-lg shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                ZAP!
+            </div>
+</div>
+<div class="absolute bottom-20 left-4 sticker-rotate-neg hidden md:block z-0">
+<span class="material-symbols-outlined text-[80px] text-primary" style="font-variation-settings: &quot;FILL&quot; 1;">star</span>
+</div>
+<!-- Header -->
+<header class="mb-16 relative z-10">
+<h1 class="font-display-lg text-headline-lg-mobile md:text-headline-lg text-on-background uppercase">
+                FALE COMIGO / <br>
+<span class="relative inline-block">
+                    TALK TO ME
+                    <span class="absolute -bottom-2 left-0 w-full h-4 bg-primary-container -z-10"></span>
+</span>
+</h1>
+</header>
+<!-- Main Content Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-start relative z-10">
+<!-- Left Column: Contact Info -->
+<div class="md:col-span-5 space-y-8">
+<div class="bg-tertiary-container border-4 border-on-background p-8 neo-brutal-shadow sticker-rotate-neg relative overflow-hidden group">
+<div class="absolute inset-0 halftone-bg opacity-20"></div>
+<div class="relative z-10">
+<p class="font-label-lg text-xs uppercase tracking-widest text-on-tertiary-container mb-2">Email</p>
+<h2 class="font-headline-md text-on-tertiary-container break-all">HELLO@STUDIOZINE.COM</h2>
+<div class="mt-6 flex justify-end">
+<span class="material-symbols-outlined text-4xl transform group-hover:translate-x-2 transition-transform">arrow_outward</span>
+</div>
+</div>
+</div>
+<div class="p-6 border-4 border-on-background bg-surface-container-highest">
+
+<div class="mt-4 flex gap-2">
+<div class="w-3 h-3 rounded-full bg-primary border-2 border-on-background"></div>
+<div class="w-3 h-3 rounded-full bg-secondary-container border-2 border-on-background"></div>
+<div class="w-3 h-3 rounded-full bg-tertiary-container border-2 border-on-background"></div>
+</div>
+</div>
+</div>
+<!-- Right Column: Form -->
+<div class="md:col-span-7">
+<div class="bg-surface-container-lowest border-4 border-on-background p-8 md:p-12 neo-brutal-shadow">
+<!-- VHS Window Style Header -->
+<div class="flex items-center gap-2 mb-8 pb-4 border-b-4 border-on-background">
+<div class="w-4 h-4 rounded-full bg-error border-2 border-on-background"></div>
+<div class="w-4 h-4 rounded-full bg-tertiary border-2 border-on-background"></div>
+<div class="w-4 h-4 rounded-full bg-secondary border-2 border-on-background"></div>
+<span class="ml-4 font-label-lg text-sm uppercase">New_Message.exe</span>
+</div>
+<form action="#" class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="flex flex-col gap-2">
+<label class="font-label-lg text-xs uppercase text-on-background" for="name">Name</label>
+<input class="bg-background border-4 border-on-background p-4 focus:ring-0 focus:border-primary-container outline-none font-label-lg transition-colors" id="name" placeholder="YOUR NAME" type="text">
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-lg text-xs uppercase text-on-background" for="email">Email</label>
+<input class="bg-background border-4 border-on-background p-4 focus:ring-0 focus:border-primary-container outline-none font-label-lg transition-colors" id="email" placeholder="YOUR@EMAIL.COM" type="email">
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-lg text-xs uppercase text-on-background" for="message">Message</label>
+<textarea class="bg-background border-4 border-on-background p-4 focus:ring-0 focus:border-primary-container outline-none font-label-lg transition-colors" id="message" placeholder="WHAT'S ON YOUR MIND?" rows="5"></textarea>
+</div>
+<button class="w-full md:w-auto bg-secondary-container text-on-secondary-container px-8 py-5 border-4 border-on-background neo-brutal-shadow-sm flex items-center justify-center gap-4 font-headline-md uppercase btn-interact group transition-all" type="submit">
+<span class="">Send Message</span>
+<span class="material-symbols-outlined text-3xl transition-transform group-hover:translate-x-2">arrow_forward</span>
+</button>
+</form>
+</div>
+</div>
+</div>
+<!-- Asymmetric Zig-Zag Decoration -->
+<div class="mt-20 flex justify-center opacity-30">
+<svg fill="none" height="40" viewBox="0 0 200 40" width="200" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 20L20 0L40 20L60 0L80 20L100 0L120 20L140 0L160 20L180 0L200 20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="8"></path>
+</svg>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-auto bg-surface-container dark:bg-surface-dim border-t-4 border-on-background">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-desktop py-gutter gap-4 w-full">
+<div class="font-headline-md text-headline-md text-on-surface">STUDIO_ZINE</div>
+<div class="font-body-md text-body-md text-on-surface-variant">©1994 RADICAL PORTFOLIO. ALL RIGHTS RESERVED.</div>
+<div class="flex gap-6 font-body-md text-body-md">
+<a class="text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="#">Dribbble</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="#">Read.cv</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="#">Email</a>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interaction for form inputs
+        const inputs = document.querySelectorAll('input, textarea');
+        inputs.forEach(input => {
+            input.addEventListener('focus', () => {
+                input.parentElement.classList.add('translate-x-1', 'translate-y-1');
+            });
+            input.addEventListener('blur', () => {
+                input.parentElement.classList.remove('translate-x-1', 'translate-y-1');
+            });
+        });
+
+        // Simple form submission feedback
+        const form = document.querySelector('form');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = form.querySelector('button');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<span>SENT!</span><span class="material-symbols-outlined text-3xl">check_circle</span>';
+            btn.classList.replace('bg-secondary-container', 'bg-tertiary-container');
+            
+            setTimeout(() => {
+                btn.innerHTML = originalText;
+                btn.classList.replace('bg-tertiary-container', 'bg-secondary-container');
+                form.reset();
+            }, 3000);
+        });
+    </script>
+
+
+</body></html>
